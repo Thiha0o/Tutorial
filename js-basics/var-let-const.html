@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var, let, const - Basics Example</title>
+</head>
+
+<body>
+    <h1>Javascript var, let, const Variables Example.</h1>
+    <script>
+        //var: function-scoped or globally scoped
+        var name = "Alice";
+        console.log(name); //Alice
+
+        var name = "Bob"; // Re-declaratio allowed
+        console.log(name); //Bob
+
+        // let: block-scoped
+        let age = 25;
+        console.log(age); //25
+
+        // let age = 30: Error: Cannot re-declare 'age' with let
+        age = 30; //Reassignment is allowed
+        console.log(age); //30
+
+        // const: block-scoped, must be initialized
+        const country = "USA";
+        console.log(country); //USA
+
+        //country = "Canada"; Error: Assignment to constant variable
+
+        //const city; Error: Must be initialized
+
+        //Scope Difference Example
+
+        function testVarLetConst(){
+            if(true){
+                var a = 10;
+                let b = 20;
+                const c = 30;
+            }
+
+            console.log(a);
+            //console.log(b); //Error - let is block
+            //console.log(c); //Error - const is block
+            }
+
+            testVarLetConst(); // Call testVariable Function
+    </script>
+
+</body>
+</html>
