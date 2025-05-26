@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Scope and Clousre Example</title>
+  </head>
+  <body>
+    <h1>Javascript Scope and Clousre Example</h1>
+    <script>
+      let globalVar = "I'm global";
+
+      function testScope() {
+        let localVar = "I'm local";
+        console.log(globalVar);
+        console.log(localVar);
+      }
+
+      testScope();
+
+      function outer() {
+        let count = 0;
+        return function inner() {
+          count++;
+          console.log("Count:", count);
+        };
+      }
+
+      const counter = outer();
+      counter();
+      counter();
+    </script>
+  </body>
+</html>
