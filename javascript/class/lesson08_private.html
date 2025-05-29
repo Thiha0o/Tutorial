@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Class's private Example</title>
+</head>
+<body>
+  <h1>JS Class's private Example</h1>
+
+  <script>
+    class Car {
+      #brand;
+      #year;
+
+      constructor(brand, year){
+        this.#brand = brand;
+        this.#year = year;
+      }
+
+      getInfo(){
+        return `Brand: ${this.#brand}, Year: ${this.year}`;
+      }
+    }
+  </script>
+</body>
+</html>

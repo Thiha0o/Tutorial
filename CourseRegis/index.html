@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Registration</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="">
+            <h2>Course Registration</h2>
+
+            <!-- Personal Information -->
+            <div class="personalinformation">
+                <fieldset>
+                    <legend>Personal information</legend>
+
+                    <div class="input-margin">
+                        <label class="" for="fullname">Full Name</label><br />
+                        <input type="text" name="fullname" id="fullname" />
+                    </div>
+
+                    <div class="input-margin">
+                        <label for="emailaddress">Email Address</label><br />
+                        <input type="text" name="emailaddress" id="emailaddress" />
+                    </div>
+
+                    <div class="input-margin">
+                        <label for="password">Password</label><br />
+                        <input type="password" name="password" id="password" />
+                    </div>
+
+                    <div class="input-margin">
+                        <label for="confirmpassword">Confirm Password</label><br />
+                        <input type="password" name="confirmpassword" id="confirmpassword" />
+                    </div>
+                </fieldset>
+            </div>
+            <!-- Personal Information Ends -->
+
+            <!-- Demographics  start-->
+            <div class="demographics">
+                <fieldset>
+                    <legend>Demographics</legend>
+
+                    <div class="demo-input">
+                        <label for="gender" style="display: block; margin-bottom: 5px">Gender</label>
+                        <input type="radio" name="gender" id="gender"  style="margin-left: 5px;" />Male
+                        <input type="radio" name="gender" id="gender"  style="margin-left: 5px;"/>Female
+                        <input type="radio" name="gender" id="gender"  style="margin-left: 5px;"/>Other
+                    </div>
+
+                    <div class="demo-input">
+                        <label for="interests" style="display: block; margin-bottom: 5px;">Interests</label>
+                        <input type="checkbox" name="Design" id="interests" style="margin-left: 5px;" />Design
+                        <input type="checkbox" name="Coding" id="interests"  style="margin-left: 5px;" />Coding
+                        <input type="checkbox" name="Marketing" id="interests"  style="margin-left: 5px;"/>Marketing
+                    </div>
+
+                    <div class="demo-input">
+                        <select name="country" id="country">
+                            <option value="Myanmar">Japan</option>
+                            <option value="Myanmar">Thai</option>
+                            <option value="Myanmar">Myanmar</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+            <!-- Demographics  end-->
+
+            <!-- Short Bio -->
+             <div class="short-bio">
+                <div class="short-bio-style">
+                    <label for="short-bio" style="display: block; margin-bottom: 5px">Short Bio</label>
+                    <textarea name="short-bio" id="short-bio" rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- register -->
+             <div class="register-btn">
+                <input type="button" style="width: 100%; " value="Regsiter">
+             </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline JS</title>
+</head>
+<body>
+  <ul>
+    <li>document.querySelector</li>
+    <li>getElementById</li>
+    <li>classList</li>
+    <li>Changing HTML Content and styles</li>
+    <li>Event handling (click, input, etc. )</li>
+    <li>Creating and removing elements</li>
+  </ul>
+
+  <p id="greeting">Hello</p>
+  <div class="box">Box</div>
+  <h1>Heading h1</h1>
+  <button id="btn">Click Me</button>
+  <input type="text" id="nameInput">
+  <p id="displayName"></p>
+  <div id="container"></div>
+
+  <script>
+    let para = document.getElementById("greeting");
+
+    let box = document.querySelector(".box");
+
+    box.classList.add("highlight");
+    box.classList.remove("highlight");
+    box.classList.toggle("active");
+
+    let heading = document.querySelector("h1");
+    heading.textContent = "New Heading added by anynomous person";
+    heading.style.color = "blue";
+    heading.style.fontSize = "30px";
+
+    document.getElementById("btn").addEventListener("click", () => {
+      alert("Button Clicked!");
+    })
+
+    let input = document.getElementById("nameInput");
+    let display = document.getElementById("displayName");
+
+    input.addEventListener("input", () => {
+      display.textContent = "Hello, " + input.value;
+    });
+
+    let newPara = document.createElement("p");
+    newPara.textContent = "This is a new paragraph.";
+    newPara.style.color = "green";
+    document.getElementById("container").appendChild(newPara);
+
+    setTimeout( () => {
+      newPara.remove();
+    }, 3000);
+  </script>
+</body>
+</html>

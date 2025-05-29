@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vehicle Management System</title>
+  </head>
+  <body>
+    <h1>Vehicle Management System</h1>
+    <script>
+      // Lesson 11: Final Project - Vehicle Management System
+      class Vehicle {
+        constructor(brand, year) {
+          this.brand = brand;
+          this.year = year;
+        }
+
+        getInfo() {
+          return `${this.brand} (${this.year})`;
+        }
+
+        getAge() {
+          return new Date().getFullYear() - this.year;
+        }
+
+        static compareAge(vehicle1, vehicle2) {
+          return vehicle1.getAge() - vehicle2.getAge();
+        }
+      }
+
+      class Truck extends Vehicle {
+        constructor(brand, year, loadCapacity) {
+          super(brand, year);
+          this.loadCapacity = loadCapacity;
+        }
+
+        getInfo() {
+          return `${super.getInfo()} - Load: ${this.loadCapacity} tons`;
+        }
+      }
+
+      class Motorcycle extends Vehicle {
+        constructor(brand, year, type) {
+          super(brand, year);
+          this.type = type;
+        }
+
+        getInfo() {
+          return `${super.getInfo()} - Type: ${this.type}`;
+        }
+      }
+
+      const truck = new Truck("Volvo", 2018, 18);
+      const bike = new Motorcycle("Yamaha", 2020, "Sport");
+
+      console.log(truck.getInfo());
+      console.log(bike.getInfo());
+      console.log(`Truck Age: ${truck.getAge()} years`);
+      console.log(`Bike Age: ${bike.getAge()} years`);
+      const newer = Vehicle.compareAge(truck, bike) > 0 ? "bike" : "truck";
+      console.log(`The ${newer} is newer.`);
+    </script>
+  </body>
+</html>

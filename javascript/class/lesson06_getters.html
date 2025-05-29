@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Class's getter Example</title>
+</head>
+<body>
+  <script>
+    class Circle {
+      constructor(radius) {
+        this._radius = radius;
+      }
+
+      get area() {
+        return Math.PI * this._radius ** 2;
+      }
+    }
+
+    const c = new Circle(4);
+    console.log(c.area);
+    
+  </script>
+</body>
+</html>
