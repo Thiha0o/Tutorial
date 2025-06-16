@@ -10,7 +10,8 @@ import NavLayout from "@/components/NavLayout/NavLayout";
 import BasicForm from "@/components/BasicForm/BasicForm";
 import ContactFormCopy from "@/components/ContactForm/ContactFormCopy"; //From Ye Htut Naung
 import ContactForm from "@/components/ContactForm/ContactForm";
-
+import TodoApp from "@/components/TodoApp";
+import TodoAppfromAppPage from "./todo-list/page";
 export default function Home() {
   return (
     <div>
@@ -34,16 +35,18 @@ export default function Home() {
       <MUIGrid />
       <MUIStack />
       <MUISx /> */}
-      <NavLayout>
+      {/* <NavLayout>
         <Box>
           <Typography>Nav Layout Children Content</Typography>
         </Box>
-      </NavLayout>
+      </NavLayout> */}
 
       {/* <BasicForm /> */}
       {/* <ContactFormCopy /> */}
       {/* Up file is form ye htut */}
-      {/* <ContactForm /> */}
+      <ContactForm />
+      {/* <TodoApp /> */}
+      {/* <TodoAppfromAppPage /> */}
     </div>
   );
 }

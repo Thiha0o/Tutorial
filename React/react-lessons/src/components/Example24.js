@@ -17,9 +17,9 @@ export default function TodoApp() {
     }
   };
 
-  const removeTask = (PassedindexToRemove) => {
+  const removeTask = (PassedIndexToRemove) => {
     setTasks((prevTasks) =>
-      prevTasks.filter((_, index) => index != PassedindexToRemove)
+      prevTasks.filter((_, index) => index != PassedIndexToRemove)
     );
   };
 
