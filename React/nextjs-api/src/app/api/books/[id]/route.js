@@ -1,32 +1,19 @@
 import { NextResponse } from "next/server";
 import * as yup from "yup";
 
-const BookData = [
-  {
-    booknName: "Superman:Legacy",
-    author: "James Gunn",
-    published_year: "July 11 2025",
-  },
-];
-
-export async function GET() {
-  return NextResponse.json(BookData);
-}
-
 const schema = yup.object().shape({
   bookName: yup.string().required("Book name is required"),
   author: yup.string().required("Author name is required"),
   published_year: yup.number().required("Published year is required"),
 });
 
-//Create Book API
-export async function POST(req) {
+export async function PUT(req, { params }) {
   try {
-    const body = await req.json(); //Get requested body data from client
-    // console.log(body);
-    await schema.validate(body, { abortEarly: false });
+    const bookId = params.id;
+    const body = await req.json();
     return NextResponse.json({
-      message: "Book is successfully created",
+      message: "Book Data is successfully updated.",
+      bookId,
       bodyData: body,
     });
   } catch (error) {
@@ -51,4 +38,24 @@ export async function POST(req) {
       { status: 500 }
     );
   }
+}
+
+export async function DELETE(req, { params }) {
+  const bookId = params.id; //Get URI params field;
+  return NextResponse.json({
+    message: "Book Data is successfully deleted",
+    bookId,
+  });
+}
+
+export async function GET(req, { params }) {
+  const bookId = params.id; //Get URI params field;
+  const book = {
+    id: bookId,
+    bookName: "Superman Legacy",
+    author: "James Gunn",
+    published_year: "July 11 2025",
+    starring: "David Corenswet,Rachel Brosnaham",
+  };
+  return NextResponse.json(book);
 }
