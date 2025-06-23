@@ -3,11 +3,13 @@ import * as yup from "yup";
 
 const BookData = [
   {
+    id: 1,
     booknName: "Superman:Legacy",
     author: "James Gunn",
     published_year: "July 11 2025",
   },
   {
+    id: 2,
     booknName: "Fantastics Four",
     author: " Tom Cruise",
     published_year: "July 11 2025",
