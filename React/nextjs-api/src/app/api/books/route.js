@@ -7,6 +7,11 @@ const BookData = [
     author: "James Gunn",
     published_year: "July 11 2025",
   },
+  {
+    booknName: "Fantastics Four",
+    author: " Tom Cruise",
+    published_year: "July 11 2025",
+  },
 ];
 
 export async function GET() {
