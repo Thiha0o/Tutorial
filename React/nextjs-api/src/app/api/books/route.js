@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import * as yup from "yup";
+import { prisma } from "@/lib/prisma";
 
 const BookData = [
   {
@@ -17,11 +18,13 @@ const BookData = [
 ];
 
 export async function GET() {
-  return NextResponse.json(BookData);
+  const books = await prisma.book.findMany();
+  return NextResponse.json(books);
 }
 
+//Validation Shema to validate client request
 const schema = yup.object().shape({
-  bookName: yup.string().required("Book name is required"),
+  book_name: yup.string().required("Book name is required"),
   author: yup.string().required("Author name is required"),
   published_year: yup.number().required("Published year is required"),
 });
@@ -31,10 +34,13 @@ export async function POST(req) {
   try {
     const body = await req.json(); //Get requested body data from client
     // console.log(body);
-    await schema.validate(body, { abortEarly: false });
+    const validatedData = await schema.validate(body, { abortEarly: false });
+    const book = await prisma.book.create({
+      data: validatedData,
+    });
     return NextResponse.json({
       message: "Book is successfully created",
-      bodyData: body,
+      book: book,
     });
   } catch (error) {
     if (error.name === "ValidationError") {
