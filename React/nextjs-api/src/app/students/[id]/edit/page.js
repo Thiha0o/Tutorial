@@ -2,6 +2,6 @@
 
 import { Box } from "@mui/material";
 
-export default function EditStudent() {
+export default function StudentEdit() {
   return <Box>Edit Student Page</Box>;
 }
